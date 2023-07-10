@@ -1,0 +1,105 @@
+<div class="place-order-container f-col">
+  <div class="order-date-input">
+    <label for="dateInput">Order Food for Date:</label>
+    <input type="date" id="order_date" class="order_date" required />
+  </div>
+
+  <div class="menu f-row">
+    <div class="menu-card">
+      <div class="card-title f-row">
+        <p>Breakfast</p>
+        <label class="switch">
+          <input
+            type="checkbox"
+            name="bCheck"
+            (change)="onBoxChange($any($event.target).checked, 1)"
+          />
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <img
+        *ngIf="bVeg"
+        src="/assets/images/breakfast-veg.png"
+        alt="breakfast-veg"
+        class="meal-pic"
+      />
+
+      <div *ngIf="checkbox1Val" class="boxes f-row">
+        <div class="inputDiv">
+          <input type="radio" name="typeB" id="veg" value="Veg" checked />
+          <label for="veg">Veg</label>
+        </div>
+
+        <div class="inputDiv">
+          <input
+            type="radio"
+            name="typeB"
+            id="nonveg"
+            value="NonVeg"
+            disabled
+          />
+          <label for="nonveg">Non Veg</label>
+        </div>
+      </div>
+    </div>
+
+    <div class="menu-card">
+      <div class="card-title f-row">
+        <p>Lunch</p>
+        <label class="switch">
+          <input
+            type="checkbox"
+            name="lCheck"
+            (change)="onBoxChange($any($event.target).checked, 2)"
+          />
+          <span class="slider round"></span>
+        </label>
+      </div>
+
+      <img
+        *ngIf="lVeg"
+        else
+        #nonVegLunch
+        src="/assets/images/lunch-veg.png"
+        alt="lunch-veg"
+        class="meal-pic"
+      />
+      <ng-template #nonVegLunch>
+        <img
+          *ngIf="!lVeg"
+          src="/assets/images/lunch-nonveg.jpg"
+          alt="lunch-nonveg"
+          class="meal-pic"
+        />
+      </ng-template>
+
+      <div *ngIf="checkbox2Val" class="boxes f-row">
+        <div class="inputDiv">
+          <input
+            type="radio"
+            name="typeL"
+            id="veg"
+            value="Veg"
+            checked
+            (change)="onRadioChange($any($event.target).checked, 'l')"
+          />
+          <label for="veg">Veg</label>
+        </div>
+
+        <div class="inputDiv">
+          <input
+            type="radio"
+            name="typeL"
+            id="nonveg"
+            value="NonVeg"
+            (change)="onRadioChange($any($event.target).checked, 'l')"
+          />
+          <label for="nonveg">Non Veg</label>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <button [disabled]="!checkbox1Val && !checkbox2Val">Place Order</button>
+</div>

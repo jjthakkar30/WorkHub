@@ -1,0 +1,44 @@
+<div class="login-page f-row">
+  <div class="login-content f-row p3">
+    <div class="hero f-col">
+      <div class="hero-comp f-row p1">
+        <img class="w-logo" src="/assets/images/W.png" alt="logo" />
+        <p class="comp-title">WorkHub</p>
+      </div>
+      <div class="hero-info">
+        <p>Office Operations<br />at your fingertips...</p>
+      </div>
+    </div>
+    <div class="form-div f-row">
+      <div class="login-form m1">
+        <form action="" class="form f-col">
+          <div class="input-div">
+            <input
+              type="email"
+              name="user_id"
+              id="user_id"
+              placeholder="Your Email Address"
+              #idInput
+              required
+            />
+          </div>
+          <div class="input-div">
+            <input
+              type="password"
+              name="user_pw"
+              id="user_pw"
+              placeholder="Password"
+              #pwInput
+              required
+            />
+          </div>
+          <div class="button-div">
+            <button type="button" class="login-btn" (click)="onLogin()">
+              Log in
+            </button>
+          </div>
+        </form>
+      </div>
+    </div>
+  </div>
+</div>

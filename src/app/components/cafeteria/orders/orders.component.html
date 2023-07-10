@@ -1,0 +1,17 @@
+<div class="container">
+  <p>Your Previous Orders</p>
+  <div class="orders-wrap f-row">
+    <p class="left" (click)="leftScroll()"><</p>
+    <div class="orders f-row m1" #scroll>
+      <app-order-card
+        *ngFor="let orderItem of orders"
+        [order]="orderItem"
+      ></app-order-card>
+    </div>
+    <p class="right" (click)="rightScroll()">></p>
+  </div>
+
+  <button routerLink="place-order" class="place-order" (click)="onPlaceOrder()">
+    Place an Order
+  </button>
+</div>

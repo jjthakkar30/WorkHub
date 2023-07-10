@@ -1,0 +1,84 @@
+.login-page {
+  width: 100vw;
+  height: 100vh;
+  color: #222;
+  background: url('../../../assets/images/login-bg.jpg') no-repeat center center/cover;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+}
+
+.login-page::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+.login-content {
+  background: #eee;
+  z-index: 1;
+  border-radius: 6px;
+
+  @media screen and (max-width: 745px) {
+    flex-direction: column;
+    padding: 0;
+  }
+}
+
+.w-logo {
+  width: 100px;
+  height: auto;
+
+  @media screen and (max-width: 300px) {
+    width: 60px;
+  }
+}
+
+.comp-title {
+  font-size: 3.5rem;
+}
+
+.hero-info {
+  font-size: 2rem;
+  text-align: center;
+}
+
+.form {
+  .input-div {
+    // margin: 6px 0;
+
+    input {
+      width: 15rem;
+      outline: none;
+      padding: 10px;
+      border: 2px solid #4a4949;
+      border-radius: 6px;
+      background: #eee;
+      margin: 0.5rem;
+
+      &:focus {
+        border: 2px solid rgba(#00acf0, 0.5);
+      }
+    }
+  }
+
+  button {
+    width: 15rem;
+    cursor: pointer;
+    background: #222;
+    color: #eee;
+    font-size: 1rem;
+    padding: 0.5rem;
+    margin: 1rem 0.5rem 0.5rem 0.5rem;
+    border-radius: 6px;
+  }
+}
+

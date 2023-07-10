@@ -1,0 +1,31 @@
+<div class="card">
+  <div class="card-content f-col">
+    <p class="date">{{ order.date.toDateString() }}</p>
+
+    <div class="order-details f-col">
+      <p>Order:</p>
+
+      <div class="meal-order f-row" *ngIf="order.breakfast.ordered">
+        <p>Breakfast</p>
+        <img src="/assets/images/symbol-veg.png" alt="veg" class="symbol" />
+      </div>
+
+      <div class="meal-order f-row" *ngIf="order.lunch.ordered">
+        <p>Lunch</p>
+
+        <img
+          src="/assets/images/symbol-veg.png"
+          alt="veg"
+          class="symbol"
+          *ngIf="order.lunch.ifVeg"
+        />
+        <img
+          src="/assets/images/symbol-nonveg.png"
+          alt="nonveg"
+          class="symbol"
+          *ngIf="!order.lunch.ifVeg"
+        />
+      </div>
+    </div>
+  </div>
+</div>
