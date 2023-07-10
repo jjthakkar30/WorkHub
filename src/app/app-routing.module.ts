@@ -22,16 +22,16 @@ const routes: Routes = [
     component: HomeComponent
   },
   {
-    path:'office',
-    component: PageNotFoundComponent
-  },
-  {
     path:'cafeteria',
     component: CafeteriaComponent,
     children: [
       { path: '', component: OrdersComponent},
       { path: 'place-order', component: PlaceOrderComponent }
     ]
+  },
+  {
+    path:'office',
+    component: PageNotFoundComponent
   },
   {
     path:'library',
